@@ -33,7 +33,7 @@ class player{
   }
   numwin(){
       let win = 0;
-      for (let inde = 0; inde < this._results.length; inde++) {
+      for (let inde = 0; inde < this._results.length; inde++) { //นำผลของผู้เล่นในแต่ละครั้งมาเปรียบเทียบ
          if (this._results[inde] == "Win") {
              win++;
          }
@@ -59,8 +59,8 @@ class dice{
 let player1 = new player("Paul"); //สร้าง obj  ชื่อ Paul
 let player2 = new player("Qqqq"); //สร้าง obj  ชื่อ Qqqq
 let rounds = 4; // กำหนดจำนวนรอบทั้งหมดที่เล่น
-let dice1 = new dice(rounds); //
-let dice2 = new dice(rounds); //
+let dice1 = new dice(rounds); // สร้าง Obj ลูกเต๋าของผู้เล่นคนแรก
+let dice2 = new dice(rounds); // สร้าง Obj ลูกเต๋าของผู้เล่นคนที่สอง
 
 for (let index = 0; index < rounds; index++) {
   console.log("----------round : " + (index + 1) + "----------"); 
@@ -85,6 +85,6 @@ if (player1.numwin() > player2.numwin()) {
 }else{
   console.log(player2.name + " Win!!!" + "  ชนะทั้งหมด :" + player2.numwin())
 }
-
+// แสดงผลการเล่นในทุกๆครั้งของเกมนี้ที่เก็บค่าเอาไว้
 console.log("\nชื่อ : " + player1.name + "  แสดงแต้ม : " + player1.number + "  แสดงจำนวนแพ้ชนะ : " + player1.results );
 console.log("\nชื่อ : " + player2.name + "  แสดงแต้ม : " + player2.number + "  แสดงจำนวนแพ้ชนะ : " + player2.results );
